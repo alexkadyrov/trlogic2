@@ -1,0 +1,15 @@
+version: "3.5"
+services:
+
+  api:
+    container_name: photo-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: /bin/sh -c "app"
+    environment:
+      TMP_PATH: "/tmp"
+    ports:
+      - 8080:8080
+    volumes:
+      - /tmp:/tmp
